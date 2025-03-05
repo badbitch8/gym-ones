@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <style>
+        body {
+            background-image: url('wallpaper.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+        /* Taskbar styles */
+        .taskbar {
+            display: flex;
+            align-items: center;
+            background-color: transparent;
+            position: fixed; /* Make the taskbar fixed */
+            top: 0; /* Position at the top */
+            width: 100%; /* Full width */
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 10; /* Ensure taskbar is above the image */
+        }
+        .taskbar .links {
+            margin: auto; /* Center the links */
+        }
+        .taskbar a {
+            text-decoration: none;
+            color: white; /* Links in white */
+            margin: 0 15px;
+        }
+        .taskbar button {
+            margin-left: 15px;
+            margin-right: 15px; 
+            padding: 10px 15px;
+            border: none;
+            background-color: grey; /* Buttons in grey */
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .taskbar button:hover {
+            background-color: rgb(15, 243, 15); /* Light green on hover */
+            color: rgb(43, 43, 44); /* Sky blue text when hovered */
+        }
+        .logo {
+            margin-left: 15px;
+        }
+        .bars {
+            display: flex;
+            flex-direction: column;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+        .bar {
+            width: 20px;
+            height: 2px;
+            background-color: rgb(66, 62, 62);
+            margin: 2px 0;
+        }
+        .bar:hover {
+            background-color: lightgreen; /* Light green on hover */
+        }
+        .popup {
+            display: none;
+            position: absolute;
+            top: 80px; /* Align below of the bars */
+            left: 40px; /* Position to the right of the bars */
+            background-color: rgba(50, 50, 50, 0.9); /* Dark grey with transparency */
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+            z-index: 20; /* Ensure it is above other elements */
+        }
+        .bars:hover + .popup {
+            display: block; /* Show popup on hover of bars */
+            pointer-events: auto; /* Allow interaction with the popup */
+        }
+        .popup-item {
+            display: flex;
+            align-items: center;
+            margin: 5px 0;
+            color: white; /* Text color */
+        }
+        @keyframes slideIn {
+            0% {
+                transform: translateX(-100%); /* Start off-screen to the left */
+                opacity: 0; /* Start invisible */
+            }
+            100% {
+                transform: translateX(0); /* End at original position */
+                opacity: 1; /* Fully visible */
+            }
+        }
+        body {
+            animation: slideIn 0.5s ease forwards; /* Apply animation to the body */
+        }
+        .taskbar, .popup, .fitness-image {
+            animation: slideIn 0.5s ease forwards; /* Apply animation to each element */
+            opacity: 0; /* Start invisible */
+        }
+    </style>
+    <script>
+        function redirectUser() {
+            // Redirect to new_login.html
+            window.location.href = 'new_login.html';
+        }
+        
+        function redirectToContact() {
+            // Redirect to contact page
+            window.location.href = 'contact.html'; // Adjust the filename if necessary
+        }
+    </script>
+</head>
+<body>
+
+<div class="taskbar">
+        <div class="bars">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <img src="logo_gym-removebg-preview.png" class="logo" alt="Logo" style="width: 100px; height: 100px;" />
+
+        <div class="links">
+            <a href="#">Home</a>
+            <a href="#">Fitness Plan</a>
+            <a href="#">Subscriptions</a>
+        </div>
+        <div>
+            <button onclick="redirectUser()">Get Started</button>
+            <button onclick="redirectToContact()">Contact Us</button>
+        </div>
+
+        <div class="popup">
+            <div class="popup-item">
+                <span>📞</span> Community Chat
+            </div>
+            <div class="popup-item">
+                <span>🛠️</span> Settings
+            </div>
+            <div class="popup-item">
+                <span>❓</span> Help
+            </div>
+            <div class="popup-item">
+                <span>👤</span> Account
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

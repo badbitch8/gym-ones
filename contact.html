@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('Untitled design (2).png'); /* Updated background image */
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 20px;
+        }
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: rgba(240, 240, 240, 0.8); /* Slight transparency for better visibility */
+            padding: 20px;
+            border-radius: 10px;
+        }
+        h1 {
+            text-align: center;
+            color: #d5006d;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-group textarea {
+            resize: vertical;
+        }
+        .submit-button {
+            background-color: #d5006d;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+        .contact-info {
+            text-align: center;
+            margin-top: 20px;
+            color: white; /* Changed text color to white */
+        }
+        .contact-info a {
+            color: white; /* Ensure email link is white */
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: white; /* Footer text color */
+            padding: 10px 0;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for footer */
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="contact-container">
+        <h1>Enquire</h1>
+
+        <form>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
+
+    </div>
+    <div class="contact-info" style="margin-top: 30px; text-align: center;">
+        <h2 style="color: white;">Contact Us</h2>
+        <p>Email: <a href="mailto:gloriatunika@gmail.com" style="color: white;">gloriatunika@gmail.com</a></p>
+        <p style="color: white;">Phone: 0768606129</p>
+    </div>
+
+
+</body>
+
+</html>

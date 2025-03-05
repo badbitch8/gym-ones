@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        /* Testimonial Popup Styles */
+        .testimonial-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 600px;
+            color: white;
+            z-index: 1000;
+        }
+        .testimonial-popup.active {
+            display: block;
+        }
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            cursor: pointer;
+            font-size: 24px;
+            color: #d5006d;
+        }
+        .testimonial-content {
+            text-align: center;
+        }
+        .customer-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 15px;
+        }
+        .customer-name {
+            font-size: 20px;
+            margin: 10px 0;
+            color: #d5006d;
+        }
+        .testimonial-text {
+            font-style: italic;
+            margin: 20px 0;
+        }
+        .rating {
+            color: #ffd700;
+            font-size: 24px;
+            margin: 15px 0;
+        }
+        .testimonial-btn {
+            background-color: #d5006d;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin: 20px auto;
+            display: inline-block;
+            cursor: pointer;
+        }
+        
+        body {
+
+            background-image: url('Untitled design.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .content {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 800px;
+        }
+        .back-button {
+            background-color: #d5006d;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>About Our Gym</h1>
+        <video width="50%" controls style="margin: 20px auto; display: block;">
+            <source src="100546-video-720.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <p>Welcome to our state-of-the-art fitness center! Our gym features a sleek and modern design, inspired by the latest trends in fitness architecture. The background image you see represents our commitment to creating an inspiring and motivating environment for all our members.</p>
+
+        <p>Our facilities include:</p>
+        <ul>
+            <li>Cutting-edge workout equipment</li>
+            <li>Spacious workout areas</li>
+            <li>Professional trainers</li>
+            <li>Various membership packages</li>
+        </ul>
+        <a href="index.html" class="back-button">Back to Home</a>
+        <button class="testimonial-btn" onclick="showTestimonial()">View Testimonials</button>
+    </div>
+
+    <!-- Testimonial Popup -->
+    <div class="testimonial-popup" id="testimonialPopup">
+        <span class="close-btn" onclick="hideTestimonial()">&times;</span>
+        <div class="testimonial-content">
+            <img src="Flux_Dev_a_closeup_shot_of_a_determined_fitness_enthusiast_ado_0.jpeg" alt="Customer" class="customer-photo">
+            <div class="customer-name">Jane D., Chicago</div>
+            <div class="rating">★★★★★</div>
+            <p class="testimonial-text">
+                "I was skeptical at first, but this gym has completely transformed my fitness journey. 
+                The classes are amazing, and the trainers are so supportive!"
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function showTestimonial() {
+            document.getElementById('testimonialPopup').classList.add('active');
+        }
+        
+        function hideTestimonial() {
+            document.getElementById('testimonialPopup').classList.remove('active');
+        }
+    </script>
+</body>
+
+</html>

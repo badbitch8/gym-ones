@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            background-image: url('part2weights.jpg');
+            background-size: cover;
+            background-position: center;
+
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 300px;
+            padding: 20px;
+            background: rgba(211, 211, 211, 0.9); /* Less transparent grey background */
+
+            border-radius: 10px; /* Smooth edges */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* 3D effect */
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group input {
+            width: calc(100% - 20px); /* Adjust width to fit in the container */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box; /* Ensure padding is included in width */
+        }
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #4cae4c;
+        }
+        .links {
+            margin-top: 10px;
+        }
+        .links a {
+            display: block;
+            margin: 5px 0;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <div id="loginContainer">
+            <form id="loginForm" onsubmit="event.preventDefault(); window.location.href='index.html';">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="btn">Login</button>
+            </form>
+            <div class="links">
+                <a href="#" id="signUpLink">Don't have an account? Sign Up</a>
+                <a href="#">Forgot Password?</a>
+            </div>
+        </div>
+        <div id="signUpContainer" style="display: none;">
+            <form id="signUpForm">
+                <div class="form-group">
+                    <label for="signUpEmail">Email</label>
+                    <input type="email" id="signUpEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="phoneNumber">Phone Number</label>
+                    <input type="tel" id="phoneNumber" required>
+                </div>
+                <div class="form-group">
+                    <label for="signUpPassword">Password</label>
+                    <input type="password" id="signUpPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" required>
+                </div>
+                <button type="submit" class="btn">Submit</button>
+                <a href="#" id="loginLink">Already have an account? Login</a>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.getElementById('signUpLink').addEventListener('click', function() {
+            document.getElementById('loginContainer').style.display = 'none';
+            document.getElementById('signUpContainer').style.display = 'block';
+        });
+
+        document.getElementById('loginLink').addEventListener('click', function() {
+            document.getElementById('signUpContainer').style.display = 'none';
+            document.getElementById('loginContainer').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
